@@ -23,7 +23,6 @@ public class Controller {
 
         filechooser.setTitle("Exportierte CSV Datei auswählen");
         File selected = filechooser.showOpenDialog(stage);
-
-        System.out.println(selected);
+        Converter.getFile(selected);
     }
 }
