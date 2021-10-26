@@ -13,19 +13,15 @@ import java.io.File;
 
 public class Controller {
     @FXML
-    private Label welcomeText;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
     protected void openFile(ActionEvent event) {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
         FileChooser filechooser = new FileChooser();
-        filechooser.setTitle("Select Exported CSV File");
+
+        filechooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
+
+        filechooser.setTitle("Exportierte CSV Datei auswählen");
         File selected = filechooser.showOpenDialog(stage);
 
         System.out.println(selected);

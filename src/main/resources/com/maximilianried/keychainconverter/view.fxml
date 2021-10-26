@@ -11,8 +11,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label text="Wähle mit dem Button unten die zu konvertierende CSV Datei aus." />
 
-    <Button text="Open File" onAction="#openFile"/>
+    <Button text="Datei auswählen" onAction="#openFile"/>
 </VBox>
