@@ -10,7 +10,7 @@ public class Converter {
         try {
             Scanner sc = new Scanner(new File(String.valueOf(selected)));
 
-            sc.useDelimiter(",");
+            sc.useDelimiter(";");
 
             while(sc.hasNext()) {
                 System.out.print(sc.next()+ "|");
@@ -18,8 +18,7 @@ public class Converter {
 
             sc.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("File not found");
+            System.out.println("No file selected");
         }
     }
 
