@@ -10,10 +10,11 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Controller {
     @FXML
-    protected void openFile(ActionEvent event) {
+    protected void openFile(ActionEvent event) throws IOException {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
         FileChooser filechooser = new FileChooser();
