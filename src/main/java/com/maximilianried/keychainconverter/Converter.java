@@ -3,12 +3,8 @@ package com.maximilianried.keychainconverter;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
-
 
 public class Converter {
 
@@ -47,27 +43,9 @@ public class Converter {
             System.out.println("TOTP : " + nextRecord[10]);
             System.out.println("==========================");
 
-            /*
-            try (
-                Writer writer = Files.newBufferedWriter(Paths.get(homePath));
-
-                CSVWriter csvWriter = new CSVWriter(writer,
-                        CSVWriter.DEFAULT_SEPARATOR,
-                        CSVWriter.NO_QUOTE_CHARACTER,
-                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                        CSVWriter.DEFAULT_LINE_END);
-            ) {
-                String[] headerRecord = {"Name", "URL", "Password", "TOTP"};
-                csvWriter.writeNext(headerRecord);
-
-                csvWriter.writeNext(new String[]{nextRecord[3]});
-                csvWriter.writeNext(new String[]{nextRecord[7]});
-                csvWriter.writeNext(new String[]{nextRecord[9]});
-                csvWriter.writeNext(new String[]{nextRecord[10]});
-            }
-            */
         }
 
 
     }
+
 }
