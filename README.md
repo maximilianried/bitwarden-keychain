@@ -10,4 +10,4 @@ The read and write process is supported by the library openCSV.
 
 ## Preview
 Super simple GUI with different alerts if the user forgets to select a file or selects a wrong formatted file.
-![Preview](preview/preview.png)
+![Preview](preview.png)
