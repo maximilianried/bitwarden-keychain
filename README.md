@@ -1,7 +1,9 @@
 # Keychain Converter
 
 ## Description
-This application should convert CSV Files from different Password Manager to a CSV File that is importable by iCloud Keychain.
+This application converts a Bitwarden CSV file to a CSV File that is importable by iCloud Keychain. <br/>
+The goal is to create a fast and lightweight application.
 
 ## Technologies
-The plan for this Project is to only use Java and Javafx for the GUI.
+This Project is only using Java and Javafx for the GUI. <br/>
+The read and write process is supported by the library openCSV.
