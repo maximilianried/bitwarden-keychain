@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Controller {
+
     @FXML
     protected void openFile(ActionEvent event) {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
@@ -29,15 +30,7 @@ public class Controller {
             File selected = filechooser.showOpenDialog(stage);
             Converter.getFile(selected);
         } catch (IOException e) {
-            selectError();
+            Alerts.alertWindow(Alert.AlertType.WARNING, "Datei nicht gefunden", "Die Datei konnte nicht gefunden werden");
         }
-    }
-
-    public static void selectError() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Keychain Converter");
-        alert.setHeaderText("Datei nicht gefunden");
-        alert.setContentText("Die Datei konnte nicht gefunden werden, bittw wähle eine Datei!");
-        alert.showAndWait();
     }
 }

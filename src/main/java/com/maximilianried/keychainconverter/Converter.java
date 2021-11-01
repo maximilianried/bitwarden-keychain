@@ -30,8 +30,6 @@ public class Converter {
         CSVWriter csvWriter = new CSVWriter(new FileWriter(home));
         csvWriter.writeNext(new String[]{"Title", "Url", "Username", "Password", "OTPAuth"});
 
-        // TODO delete first line of imported file
-
         try {
             while ((nextRecord = csvReader.readNext()) != null) {
                 if (!nextRecord[7].contains("http") && !nextRecord[7].equals("")) {
@@ -41,27 +39,11 @@ public class Converter {
             }
 
             csvWriter.close();
-            exportSuccess();
+            Alerts.alertWindow(Alert.AlertType.INFORMATION,"Abgeschlossen", "Vergiss nicht die Datei nach dem erfolgreichem Import zu löschen");
 
         } catch (ArrayIndexOutOfBoundsException e) {
             Files.delete(Paths.get(home));
-            fileError();
+            Alerts.alertWindow(Alert.AlertType.ERROR, "Einlesefehler", "Überprüfe bitte, ob die Datei von Bitwarden stammt.");
         }
-    }
-
-    public static void exportSuccess() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Keychain Converter");
-        alert.setHeaderText("Erfolgreich abgeschlossen");
-        alert.setContentText("Vergiss nicht die Datei nach dem erfolgreichem Import zu löschen da diese nicht verschlüsselt ist!");
-        alert.showAndWait();
-    }
-
-    public static void fileError() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Keychain Converter");
-        alert.setHeaderText("Datei konnte nicht gelesen werden");
-        alert.setContentText("Überprüfe bitte, ob der richtige Passwort-Manager ausgewählt ist von dem die Datei stammt.");
-        alert.showAndWait();
     }
 }
