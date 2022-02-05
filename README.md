@@ -1,4 +1,4 @@
-# Keychain Converter
+# Bitwarden to Keychain Converter
 
 ## Description
 This application converts a Bitwarden CSV file to a CSV File that is importable by iCloud Keychain. <br/>
